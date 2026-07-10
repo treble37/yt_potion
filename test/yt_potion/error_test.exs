@@ -10,6 +10,18 @@ defmodule YtPotion.ErrorTest do
       assert %Error{type: :http_error, status: 404, body: %{"reason" => "not found"}} = error
       assert is_binary(error.message)
     end
+
+    test "accepts a nil status for transport-level failures with no HTTP response" do
+      error = Error.http_error(nil, "timeout")
+
+      assert %Error{
+               type: :http_error,
+               status: nil,
+               body: "timeout",
+               message: "HTTP request failed"
+             } =
+               error
+    end
   end
 
   describe "api_error/1" do

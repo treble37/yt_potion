@@ -22,15 +22,18 @@ defmodule YtPotion.Error do
 
   defstruct [:type, :message, :status, :body]
 
-  @spec http_error(integer(), term()) :: t()
+  @spec http_error(integer() | nil, term()) :: t()
   def http_error(status, body) do
     %__MODULE__{
       type: :http_error,
-      message: "HTTP error (status #{status})",
+      message: http_error_message(status),
       status: status,
       body: body
     }
   end
+
+  defp http_error_message(nil), do: "HTTP request failed"
+  defp http_error_message(status), do: "HTTP error (status #{status})"
 
   @spec api_error(String.t()) :: t()
   def api_error(message) do

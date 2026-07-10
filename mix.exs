@@ -53,7 +53,8 @@ defmodule YtPotion.Mixfile do
       {:req, "~> 0.5"},
       {:jason, "~> 1.4"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.4", only: [:dev], runtime: false}
+      {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
+      {:plug, "~> 1.0", only: :test}
     ]
   end
 end
