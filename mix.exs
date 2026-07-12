@@ -4,7 +4,7 @@ defmodule YtPotion.Mixfile do
   def project do
     [
       app: :yt_potion,
-      version: "0.1.3",
+      version: "1.0.0",
       elixir: "~> 1.15",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -25,7 +25,7 @@ defmodule YtPotion.Mixfile do
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README", "LICENSE*"],
+      files: ["lib", "mix.exs", "README.md", "CHANGELOG.md", "LICENSE*"],
       maintainers: ["Bruce Park"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/treble37/yt_potion"}
