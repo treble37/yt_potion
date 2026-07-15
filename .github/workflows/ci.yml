@@ -50,5 +50,7 @@ jobs:
       - name: Dialyzer
         run: mix dialyzer
 
-      - name: Test (with coverage)
-        run: mix test --cover
+      - name: Test (with coverage upload to Coveralls)
+        run: mix coveralls.github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,7 +10,19 @@ defmodule YtPotion.Mixfile do
       start_permanent: Mix.env() == :prod,
       description: description(),
       deps: deps(),
-      package: package()
+      package: package(),
+      test_coverage: [tool: ExCoveralls]
+    ]
+  end
+
+  def cli do
+    [
+      preferred_envs: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.github": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -54,6 +66,7 @@ defmodule YtPotion.Mixfile do
       {:jason, "~> 1.4"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
+      {:excoveralls, "~> 0.18", only: :test, runtime: false},
       {:plug, "~> 1.0", only: :test}
     ]
   end

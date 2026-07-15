@@ -1,5 +1,13 @@
 # YtPotion
 
+![Build](https://github.com/treble37/yt_potion/actions/workflows/ci.yml/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/treble37/yt_potion/badge.svg?branch=master)](https://coveralls.io/github/treble37/yt_potion?branch=master)
+[![Hex.pm](https://img.shields.io/hexpm/v/yt_potion.svg)](https://hex.pm/packages/yt_potion)
+[![Hex.pm Downloads](https://img.shields.io/hexpm/dt/yt_potion.svg)](https://hex.pm/packages/yt_potion)
+[![Documentation](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/yt_potion)
+[![GitHub stars](https://img.shields.io/github/stars/treble37/yt_potion.svg)](https://github.com/treble37/yt_potion/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/treble37/yt_potion/master/LICENSE)
+
 An Elixir wrapper for the YouTube Data API v3 (read-only: search, videos, channels), built on [`Req`](https://hexdocs.pm/req).
 
 All runtime failures return tagged tuples — `{:ok, items}` or `{:error, %YtPotion.Error{}}` — never exceptions.
